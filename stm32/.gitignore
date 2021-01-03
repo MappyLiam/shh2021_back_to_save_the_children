@@ -1,0 +1,6 @@
+.settings
+.cproject
+.project
+child-safe-mask Debug.launch
+/Debug/*
+
