@@ -26,7 +26,7 @@
 ## 구성
 ![system diagram](/static/img/system_diagram.png)
 
-IoT Device(좌측)
+IoT Device
 - 영유아의 마스크 착용 여부를 센싱
 - 주변 미세먼지와 공기질을 측정
 - 데이터를 HTTP를 통해 서버로 전송
