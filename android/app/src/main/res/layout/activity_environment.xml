@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_activity_background"
+    android:backgroundTint="#5D94BC"
+    android:backgroundTintMode="screen"
+    tools:context=".EnvironmentActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="409dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/returnButton"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/abc_vector_test" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MASK"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="648dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/timeView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/white_round_button"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/envView"
+                android:layout_width="420dp"
+                android:layout_height="220dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/white_round_button" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_round_button">
+
+                <TextView
+                    android:id="@+id/pm2_5View"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_pm2_5"
+                    app:layout_constraintEnd_toEndOf="@+id/progress_pm2_5"
+                    app:layout_constraintStart_toStartOf="@+id/progress_pm2_5"
+                    app:layout_constraintTop_toTopOf="@+id/progress_pm2_5" />
+
+                <com.dinuscxj.progressbar.CircleProgressBar
+                    android:id="@+id/progress_pm2_5"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:progress_background_color="#11111111"
+                    app:progress_end_color="#F17293"
+                    app:progress_start_color="#63DF7F"
+                    app:progress_stroke_cap="round"
+                    app:progress_stroke_width="20dp"
+                    app:progress_text_color="#00ffffff"
+                    app:style="solid_line" />
+
+                <com.dinuscxj.progressbar.CircleProgressBar
+                    android:id="@+id/progress_pm10"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:progress_background_color="#11111111"
+                    app:progress_end_color="#F17293"
+                    app:progress_start_color="#63DF7F"
+                    app:progress_stroke_cap="round"
+                    app:progress_stroke_width="20dp"
+                    app:progress_text_color="#00ffffff"
+                    app:style="solid_line" />
+
+                <com.dinuscxj.progressbar.CircleProgressBar
+                    android:id="@+id/progress_co2"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_pm2_5"
+                    app:progress_background_color="#11111111"
+                    app:progress_end_color="#F17293"
+                    app:progress_start_color="#63DF7F"
+                    app:progress_stroke_cap="round"
+                    app:progress_stroke_width="20dp"
+                    app:progress_text_color="#00ffffff"
+                    app:style="solid_line" />
+
+                <com.dinuscxj.progressbar.CircleProgressBar
+                    android:id="@+id/progress_tvoc"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_pm10"
+                    app:progress_background_color="#11111111"
+                    app:progress_end_color="#F17293"
+                    app:progress_start_color="#63DF7F"
+                    app:progress_stroke_cap="round"
+                    app:progress_stroke_width="20dp"
+                    app:progress_text_color="#00ffffff"
+                    app:style="solid_line" />
+
+                <TextView
+                    android:id="@+id/pm10View"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_pm10"
+                    app:layout_constraintEnd_toEndOf="@+id/progress_pm10"
+                    app:layout_constraintStart_toStartOf="@+id/progress_pm10"
+                    app:layout_constraintTop_toTopOf="@+id/progress_pm10" />
+
+                <TextView
+                    android:id="@+id/ppmView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_co2"
+                    app:layout_constraintEnd_toEndOf="@+id/progress_co2"
+                    app:layout_constraintStart_toStartOf="@+id/progress_co2"
+                    app:layout_constraintTop_toTopOf="@+id/progress_co2" />
+
+                <TextView
+                    android:id="@+id/ppbView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_tvoc"
+                    app:layout_constraintEnd_toEndOf="@+id/progress_tvoc"
+                    app:layout_constraintStart_toStartOf="@+id/progress_tvoc"
+                    app:layout_constraintTop_toTopOf="@+id/progress_tvoc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/white_round_button">
+
+                <ImageView
+                    android:id="@+id/airQualityTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/air_quality_title" />
+
+                <TableLayout
+                    android:id="@+id/TableLayout"
+                    android:layout_width="320dp"
+                    android:layout_height="180dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/airQualityTitleView">
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/timeBar"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/TableLayout"
+                    app:srcCompat="@drawable/time_bar" />
+
+                <TextView
+                    android:id="@+id/dayView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/TableLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/TableLayout"
+                    app:lineHeight="28dp" />
+
+                <TextView
+                    android:id="@+id/commentView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="#4가지 항목을 종합적으로 분석한 결과입니다."
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timeBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
