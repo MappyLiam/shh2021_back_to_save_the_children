@@ -24,13 +24,54 @@
 본 디바이스는 주변 환경 데이터와 마스크 착용 여부를 실시간으로 수집하여 정확한 데이터를 보호자에게 제공한다. 또한 마스크 걸이와 함께 착용하는 구조로 들고 다니는게 번거롭지 않고, 호흡기에 마스크를 밀착 착용할 수 있도록 하여, 마스크를 오래 착용할 때 귀가 아픈 단점을 해소하여 아이들이 마스크를 벗어던지지 않도록 돕는다. 보호자는 디바이스에서 수집된 정보를 실시간으로 확인할 수 있으며, 일정 기간동안 데이터를 한 눈에 볼 수 있기에 아이의 안전을 효과적으로 파악할 수 있다.
 
 ## 구성
-추후 작성 예정
+![system diagram](/static/img/system_diagram.png)
+
+IoT Device(좌측)
+- 영유아의 마스크 착용 여부를 센싱
+- 주변 미세먼지와 공기질을 측정
+- 데이터를 HTTP를 통해 서버로 전송
+
+Server & Database
+- Device에서 받은 데이터를 Database에 저장
+- 앱의 요청에 따라 Database에서 데이터를 조회하여 실시간, 누적 데이터를 반환
+
+App
+- 영유아의 실시간 정보 조회
+- 영유아의 누적 데이터(월, 주, 일)를 한 눈에 확인
 
 ## 구현 사항
-추후 작성 예정
+### STM32
+- UART/I2C/SPI/GPIO 사용
+- AWS 클라우드 사용
+- 카메라 사용하지 않음
+- 이미지 분석 사용하지 않음
 
+### APP
+- Request/Response: Volley 사용
+- Data Visualization: circleprogressbar 사용
+
+### SERVER
+- Django Web Framework 사용
+- REST API: DRF 사용
 # 파일 리스트 및 기여자
-추후 작성 예정
+### STM32 
+정현영
+- src/PMSa003.c
+- inc/PMSa003.h
+
+황현태
+- src/main.c 내의 switch동작부
+
+이상민
+- src/web_client.c
+- inc/web_client.h
+
+### APP
+김산
+- 전체
+### SERVER
+이상민
+- 전체
 
 # Video
 [프로젝트 소개 영상](https://drive.google.com/file/d/1Z890NY2dW3wbAvrJFsnleTbYB6IOTEOy/view?usp=sharing)(12/31)
